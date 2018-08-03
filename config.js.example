@@ -1,0 +1,5 @@
+var config = {};
+
+config.publishKey = '--My Publish key--';
+
+module.exports = config;

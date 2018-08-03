@@ -1,0 +1,55 @@
+<script type="text/javascript" src="https://pubnub.github.io/eon/v/eon/1.0.0/eon.js"></script>
+<link type="text/css" rel="stylesheet" href="https://pubnub.github.io/eon/v/eon/1.0.0/eon.css" />
+<div id="chart"></div>
+<script type="text/javascript">
+var __eon_pubnub = new PubNub({
+  subscribeKey: "sub-c-dd166120-9434-11e8-8ad6-9a5d6aeb6012"
+});
+var __eon_cols = ["temperature"]; 
+var __eon_labels = {}; 
+chart = eon.chart({
+  pubnub: __eon_pubnub,
+  channels: ["temperature-ruuvi"],
+  history: true,
+  flow: true,
+  rate: 1000,
+  limit: 5,
+  generate: {
+    bindto: "#chart",
+    data: {
+      colors: {"temperature":"#D70060"},
+      type: "spline"
+    },
+    transition: {
+      duration: 250
+    },
+    axis: {
+      x: {
+        label: ""
+      },
+      y: {
+        label: ""
+      }
+    },
+    grid: {
+      x: {
+        show: false 
+      },
+      y: {
+        show: false 
+      }
+    },
+    tooltip: {
+     show: true
+    },
+    point: {
+      show: true
+    }
+  },
+  transform: function(message) {
+    return { eon: {
+      temperature: message.temperature
+    }}
+  }
+});
+</script>

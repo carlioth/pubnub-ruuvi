@@ -1,0 +1,24 @@
+{
+  "name": "pubnub-ruuvi",
+  "version": "1.0.0",
+  "description": "Sending ruuvitag data to pubnub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlioth/pubnub-ruuvi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlioth/pubnub-ruuvi/issues"
+  },
+  "homepage": "https://github.com/carlioth/pubnub-ruuvi#readme",
+  "dependencies": {
+    "node-ruuvitag": "^4.1.0",
+    "pubnub": "^4.21.2"
+  }
+}
